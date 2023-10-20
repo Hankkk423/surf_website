@@ -1,0 +1,98 @@
+
+
+/* Custom bootstrap */
+.navbar .navbar-brand .brand-logo{
+    height: 20px;
+    width: 60px;
+}
+/* End Custom bootstrap */
+
+
+/*** Favorite Bar ***/
+.s-favorite-bar .favorite-bar-warpper {
+    background-color: #fff;
+    border: 1px solid #e4e7ed;
+    border-right: none;
+    border-left: none;
+    display: block;
+    height: 50px;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.s-favorite-bar .bar-container {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.s-favorite-bar .scroll-bar {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px 0;
+}
+
+.s-favorite-bar .item {
+    padding: 0 18px 0 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.s-favorite-bar .condition {
+    /* display: inline-block; */
+    width: 8px;
+    height: 8px;
+    margin: 0 10px;
+    border-radius: 50%;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.s-favorite-bar .condition-poor {
+    background-color: #ff9500;;
+}
+
+.s-favorite-bar .location {
+    font-size: 17px;
+    padding: 0 10px;
+}
+
+.s-favorite-bar .feet {
+    display: flex;
+    align-items: center;
+}
+
+.s-favorite-bar .feet-height {
+    font-size: 20px;
+    padding: 0 8px;
+}
+
+.s-favorite-bar .bar-arrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.s-favorite-bar .left-arrow,
+.s-favorite-bar .right-arrow {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+}
+
+/* Hide the scrollbar by default */
+.s-favorite-bar .scroll-bar::-webkit-scrollbar {
+    display: none;
+}
