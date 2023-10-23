@@ -96,3 +96,129 @@
 .s-favorite-bar .scroll-bar::-webkit-scrollbar {
     display: none;
 }
+
+
+/*** Hero Section ***/
+.s-hero .information {
+    display: flex;
+    flex-direction: row;
+}
+
+.s-hero .information .condition {
+    width: 8px;
+    border-radius: 99px;
+    margin: auto 10px auto 0;
+    height: 100px;
+
+    /* background-color: #0BD674; */
+    position: relative;
+}
+
+.s-hero .information .condition::before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: #0bd674;
+    
+}
+
+.s-hero .btn-nearby {
+    border: 2px solid #333; /* Border style and color */
+    border-radius: 5px;     /* Border corner radius */
+    padding: 10px 20px;    /* Adjust padding as needed */
+}
+
+.s-hero .dropdown-toggle::after,
+.s-hero .dropdown-toggle.show::after {
+    transition: transform 0.3s;
+}
+
+.s-hero .dropdown-toggle.show::after {
+    transform: rotate(180deg);
+}
+
+
+/*** Tab Bar ***/
+.s-tabbar .tab-bar {
+    display: flex;
+    background-color: #f0f0f0;
+}
+
+.s-tabbar .tab-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.s-tabbar .tab-item.active {
+    /* background-color: #000;
+    color: #fff; */
+    border-bottom: 5px solid #333;
+}
+
+/* Custom bootstrap */
+.s-tabbar .tab-item a {
+    text-decoration: none; /* Remove underlines */
+    color: inherit; /* Inherit the parent's text color */
+    /* Add other custom styles as needed */
+}
+/* End Custom bootstrap */
+
+.s-tabbar .tab-content {
+    /* display: none; */
+}
+
+.s-tabbar .tab-panel {
+    display: none;
+}
+
+.s-tabbar .tab-panel.active {
+    display: block;
+}
+
+
+
+/*** Grid Box ***/
+/* .s-gridbox .card-1 .information {
+    display: flex;
+    flex-direction: row;
+} */
+
+.s-gridbox .card-1 .condition {
+    width: 6px;
+    /* border-radius: 99px; */
+    margin: auto 10px auto 0;
+    height: 40px;
+
+    /* background-color: #0BD674; */
+    position: relative;
+}
+
+.s-gridbox .card-1 .condition::before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 99px;
+
+    background-color: #0bd674;
+    
+}
+
+.s-gridbox .card-1 .main-wave {
+    font-size: 12px;
+}
+
+/* Custom bootstrap */
+.s-gridbox .card-1 .main-wave .row > * {
+    /* padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5); */
+    padding: 0;
+}
+/* End Custom bootstrap */
