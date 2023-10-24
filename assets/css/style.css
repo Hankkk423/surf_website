@@ -1,10 +1,9 @@
-
-
 /* Custom bootstrap */
-.navbar .navbar-brand .brand-logo{
+.navbar .navbar-brand .brand-logo {
     height: 20px;
     width: 60px;
 }
+
 /* End Custom bootstrap */
 
 
@@ -28,7 +27,7 @@
 
     align-items: center;
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
 }
 
 .s-favorite-bar .scroll-bar {
@@ -60,7 +59,8 @@
 }
 
 .s-favorite-bar .condition-poor {
-    background-color: #ff9500;;
+    background-color: #ff9500;
+    ;
 }
 
 .s-favorite-bar .location {
@@ -123,13 +123,16 @@
     height: 100%;
 
     background-color: #0bd674;
-    
+
 }
 
 .s-hero .btn-nearby {
-    border: 2px solid #333; /* Border style and color */
-    border-radius: 5px;     /* Border corner radius */
-    padding: 10px 20px;    /* Adjust padding as needed */
+    border: 2px solid #333;
+    /* Border style and color */
+    border-radius: 5px;
+    /* Border corner radius */
+    padding: 10px 20px;
+    /* Adjust padding as needed */
 }
 
 .s-hero .dropdown-toggle::after,
@@ -162,10 +165,13 @@
 
 /* Custom bootstrap */
 .s-tabbar .tab-item a {
-    text-decoration: none; /* Remove underlines */
-    color: inherit; /* Inherit the parent's text color */
+    text-decoration: none;
+    /* Remove underlines */
+    color: inherit;
+    /* Inherit the parent's text color */
     /* Add other custom styles as needed */
 }
+
 /* End Custom bootstrap */
 
 .s-tabbar .tab-content {
@@ -208,7 +214,7 @@
     border-radius: 99px;
 
     background-color: #0bd674;
-    
+
 }
 
 .s-gridbox .card-1 .main-wave {
@@ -216,9 +222,109 @@
 }
 
 /* Custom bootstrap */
-.s-gridbox .card-1 .main-wave .row > * {
+.s-gridbox .card-1 .main-wave .row>* {
     /* padding-right: calc(var(--bs-gutter-x) * 0.5);
     padding-left: calc(var(--bs-gutter-x) * 0.5); */
     padding: 0;
 }
+
 /* End Custom bootstrap */
+
+.s-gridbox .card-1 .main-wave .wave-arrow {
+    /* transform: rotate(23.54deg); */
+}
+
+.s-gridbox .card-2 .map-container {
+    position: relative;
+    display: inline-block;
+}
+
+.s-gridbox .card-2 .map-img {
+    border-radius: 15px;
+}
+
+.s-gridbox .card-2 .arrow-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.s-gridbox .card-2 .arrow-container .circle {
+    width: 60px;
+    /* Adjust the circle size */
+    height: 60px;
+    /* Adjust the circle size */
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.s-gridbox .card-2 .arrow-container .wind-arrow {
+    transform: rotate(11deg);
+}
+
+
+
+/*** Local Time ***/
+.s-local-time .digital-clock {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+
+
+/*** Chart ***/
+.s-chart .tooltip-container {
+    position: relative;
+}
+
+.s-chart .tooltip-card {
+    /* width: 320px;
+    height: auto;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .06);
+    border-radius: 4px;
+
+    border: 1px solid red; */
+
+
+    position: absolute;
+    width: 320px;
+    height: auto;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .06);
+    border-radius: 4px;
+    border: 1px solid red;
+    display: block; /* Initially hide the tooltip */
+    background: white;
+    z-index: 2; /* Place it above the chart */
+
+}
+
+.s-chart .tooltip-card .main-wave {
+    font-size: 12px;
+}
+
+/* Custom bootstrap */
+.s-chart .tooltip-card .main-wave .row>* {
+    padding: 0;
+}
+
+/* End Custom bootstrap */
+
+.s-chart .chart-container .chart-area {
+    background: linear-gradient(to right, rgb(236, 239, 243) 0%, rgb(236, 239, 243) 27.6991%, rgba(236, 239, 243, 0.5) 27.6991%, rgba(236, 239, 243, 0.5) 29.4583%, white 29.4583%, white 75.7512%, rgba(236, 239, 243, 0.5) 75.7512%, rgba(236, 239, 243, 0.5) 77.5104%, rgb(236, 239, 243) 77.5104%, rgb(236, 239, 243) 100%);
+    height: 126px;
+    /* width: 100%; */
+}
+
+.s-chart .chart-container .each-bar {
+    fill: #b9d3df;
+}
+
+
