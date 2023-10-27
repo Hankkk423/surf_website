@@ -502,8 +502,8 @@
 
 
 
-    <!-- Chart -->
-    <div class="s-chart">
+    <!-- Wave Chart -->
+    <div class="s-wavechart">
         <div class="container">
 
             <div class="tooltip-container d-flex py-3" style="min-height: 96px;">
@@ -612,48 +612,50 @@
             <div class="chart-container d-flex flex-row">
 
                 <div class="first-chart">
-                    <svg class="chart-area" height="116" width="379">
-                        <g transform="translate(0,51.5634)">
-                            <rect width="30.169642857142858" height="66.4366" x="8.602678571428571" rx="3" ry="3"
-                                class="each-bar" id="bar1" data-toolpos="3.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                        <g transform="translate(47.375,42.56949333333334)">
-                            <rect width="30.169642857142858" height="75.43050666666666" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar2" data-toolpos="51"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                        <g transform="translate(94.75,39.47249333333332)">
-                            <rect width="30.169642857142858" height="78.52750666666668" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar3" data-toolpos="98.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle">5</text>
-                        </g>
-                        <g transform="translate(142.125,41.64217333333333)">
-                            <rect width="30.169642857142858" height="76.35782666666667" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar4" data-toolpos="146"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                        <g transform="translate(189.5,48.728693333333325)">
-                            <rect width="30.169642857142858" height="69.27130666666667" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar5" data-toolpos="193.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle">4</text>
-                        </g>
-                        <g transform="translate(236.875,55.81537333333333)">
-                            <rect width="30.169642857142858" height="62.18462666666667" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar6" data-toolpos="240.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                        <g transform="translate(284.25,61.64221333333333)">
-                            <rect width="30.169642857142858" height="56.35778666666667" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar7" data-toolpos="288"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle">4</text>
-                        </g>
-                        <g transform="translate(331.625,63.98688)">
-                            <rect width="30.169642857142858" height="54.01312" x="8.602678571428571" rx="3" ry="3"
-                                class="each-bar" id="bar8" data-toolpos="335.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                    </svg>
+                    <div class="chart-area">
+                        <svg height="116" width="379">
+                            <g transform="translate(0,51.5634)">
+                                <rect width="30.169642857142858" height="66.4366" x="8.602678571428571" rx="3" ry="3"
+                                    class="each-bar" id="bar1" data-toolpos="3.5"></rect><text x="23.6875" y="-10"
+                                    width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                            <g transform="translate(47.375,42.56949333333334)">
+                                <rect width="30.169642857142858" height="75.43050666666666" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar2" data-toolpos="51"></rect><text x="23.6875" y="-10"
+                                    width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                            <g transform="translate(94.75,39.47249333333332)">
+                                <rect width="30.169642857142858" height="78.52750666666668" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar3" data-toolpos="98.5"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle">5</text>
+                            </g>
+                            <g transform="translate(142.125,41.64217333333333)">
+                                <rect width="30.169642857142858" height="76.35782666666667" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar4" data-toolpos="146"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                            <g transform="translate(189.5,48.728693333333325)">
+                                <rect width="30.169642857142858" height="69.27130666666667" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar5" data-toolpos="193.5"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle">4</text>
+                            </g>
+                            <g transform="translate(236.875,55.81537333333333)">
+                                <rect width="30.169642857142858" height="62.18462666666667" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar6" data-toolpos="240.5"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                            <g transform="translate(284.25,61.64221333333333)">
+                                <rect width="30.169642857142858" height="56.35778666666667" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar7" data-toolpos="288"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle">4</text>
+                            </g>
+                            <g transform="translate(331.625,63.98688)">
+                                <rect width="30.169642857142858" height="54.01312" x="8.602678571428571" rx="3" ry="3"
+                                    class="each-bar" id="bar8" data-toolpos="335.5"></rect><text x="23.6875" y="-10"
+                                    width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                        </svg>
+                    </div>
 
                     <div class="condition-colorbar">
                         <div class="colorbar-wrapper">
@@ -670,58 +672,105 @@
                         </div>
                     </div>
 
+                    <div class="timeline-bar">
+                        <div class="timeline-bar-wrapper">
+
+                            <div class="timeline-hour d-flex justify-content-center">12</div>
+                            <div class="timeline-hour d-flex justify-content-center">3</div>
+                            <div class="timeline-hour d-flex justify-content-center">6</div>
+                            <div class="timeline-hour d-flex justify-content-center">9</div>
+                            <div class="timeline-hour d-flex justify-content-center">12</div>
+                            <div class="timeline-hour d-flex justify-content-center">3</div>
+                            <div class="timeline-hour d-flex justify-content-center">6</div>
+                            <div class="timeline-hour d-flex justify-content-center">9</div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
                 <div class="second-chart">
-                    <svg class="chart-area" height="116" width="379">
-                        <g transform="translate(0,51.5634)">
-                            <rect width="30.169642857142858" height="66.4366" x="8.602678571428571" rx="3" ry="3"
-                                class="each-bar" id="bar1" data-toolpos="3.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                        <g transform="translate(47.375,42.56949333333334)">
-                            <rect width="30.169642857142858" height="75.43050666666666" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar2" data-toolpos="51"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                        <g transform="translate(94.75,39.47249333333332)">
-                            <rect width="30.169642857142858" height="78.52750666666668" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar3" data-toolpos="98.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle">5</text>
-                        </g>
-                        <g transform="translate(142.125,41.64217333333333)">
-                            <rect width="30.169642857142858" height="76.35782666666667" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar4" data-toolpos="146"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                        <g transform="translate(189.5,48.728693333333325)">
-                            <rect width="30.169642857142858" height="69.27130666666667" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar5" data-toolpos="193.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle">4</text>
-                        </g>
-                        <g transform="translate(236.875,55.81537333333333)">
-                            <rect width="30.169642857142858" height="62.18462666666667" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar6" data-toolpos="240.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                        <g transform="translate(284.25,61.64221333333333)">
-                            <rect width="30.169642857142858" height="56.35778666666667" x="8.602678571428571" rx="3"
-                                ry="3" class="each-bar" id="bar7" data-toolpos="288"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle">4</text>
-                        </g>
-                        <g transform="translate(331.625,63.98688)">
-                            <rect width="30.169642857142858" height="54.01312" x="8.602678571428571" rx="3" ry="3"
-                                class="each-bar" id="bar8" data-toolpos="335.5"></rect><text x="23.6875" y="-10"
-                                width="47.375" dominant-baseline="top" text-anchor="middle"></text>
-                        </g>
-                    </svg>
+                    <div class="chart-area">
+                        <svg class="chart-area-11" height="116" width="379">
+                            <g transform="translate(0,51.5634)">
+                                <rect width="30.169642857142858" height="66.4366" x="8.602678571428571" rx="3" ry="3"
+                                    class="each-bar" id="bar1" data-toolpos="3.5"></rect><text x="23.6875" y="-10"
+                                    width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                            <g transform="translate(47.375,42.56949333333334)">
+                                <rect width="30.169642857142858" height="75.43050666666666" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar2" data-toolpos="51"></rect><text x="23.6875" y="-10"
+                                    width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                            <g transform="translate(94.75,39.47249333333332)">
+                                <rect width="30.169642857142858" height="78.52750666666668" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar3" data-toolpos="98.5"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle">5</text>
+                            </g>
+                            <g transform="translate(142.125,41.64217333333333)">
+                                <rect width="30.169642857142858" height="76.35782666666667" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar4" data-toolpos="146"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                            <g transform="translate(189.5,48.728693333333325)">
+                                <rect width="30.169642857142858" height="69.27130666666667" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar5" data-toolpos="193.5"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle">4</text>
+                            </g>
+                            <g transform="translate(236.875,55.81537333333333)">
+                                <rect width="30.169642857142858" height="62.18462666666667" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar6" data-toolpos="240.5"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                            <g transform="translate(284.25,61.64221333333333)">
+                                <rect width="30.169642857142858" height="56.35778666666667" x="8.602678571428571" rx="3"
+                                    ry="3" class="each-bar" id="bar7" data-toolpos="288"></rect><text x="23.6875"
+                                    y="-10" width="47.375" dominant-baseline="top" text-anchor="middle">4</text>
+                            </g>
+                            <g transform="translate(331.625,63.98688)">
+                                <rect width="30.169642857142858" height="54.01312" x="8.602678571428571" rx="3" ry="3"
+                                    class="each-bar" id="bar8" data-toolpos="335.5"></rect><text x="23.6875" y="-10"
+                                    width="47.375" dominant-baseline="top" text-anchor="middle"></text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="condition-colorbar">
+                        <div class="colorbar-wrapper">
+
+                            <div class="colorbar condition-fair"></div>
+                            <div class="colorbar condition-fair"></div>
+                            <div class="colorbar condition-poor"></div>
+                            <div class="colorbar condition-fair"></div>
+                            <div class="colorbar condition-poor"></div>
+                            <div class="colorbar condition-fair"></div>
+                            <div class="colorbar condition-poor"></div>
+                            <div class="colorbar condition-poor"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="timeline-bar">
+                        <div class="timeline-bar-wrapper">
+
+                            <div class="timeline-hour d-flex justify-content-center">12</div>
+                            <div class="timeline-hour d-flex justify-content-center">3</div>
+                            <div class="timeline-hour d-flex justify-content-center">6</div>
+                            <div class="timeline-hour d-flex justify-content-center">9</div>
+                            <div class="timeline-hour d-flex justify-content-center">12</div>
+                            <div class="timeline-hour d-flex justify-content-center">3</div>
+                            <div class="timeline-hour d-flex justify-content-center">6</div>
+                            <div class="timeline-hour d-flex justify-content-center">9</div>
+
+                        </div>
+
+                    </div>
+
+
                 </div>
 
             </div>
-
-
-
 
 
             <div class="chart-label">
@@ -729,9 +778,555 @@
             </div>
 
 
-
         </div>
     </div>
+
+
+    <!-- Wind Chart -->
+    <div class="s-windchart">
+        <div class="container">
+
+            <div class="tooltip-container d-flex py-3" style="min-height: 96px;">
+                <div class="tooltip-card">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="text-container">
+                                <h6>Onshore wind</h6>
+                                <h6>
+                                    2kts<span>S</span>
+                                </h6>
+                                <p>4kts gust</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="map-container">
+                                <!-- AIzaSyD_Na3vLTyz8xDKsQpZfBlM3eYHNuKPRpY | maptype=satellite (terrain, hybrid) -->
+                                <img class="map-img"
+                                    src="https://maps.googleapis.com/maps/api/staticmap?center=33.65538488413737,-118.00411554754831&zoom=13&size=80x80&maptype=satellite&key=AIzaSyD_Na3vLTyz8xDKsQpZfBlM3eYHNuKPRpY"
+                                    alt="Location Map">
+                                <div class="arrow-container">
+                                    <div class="circle"></div>
+                                    <!-- <div class="arrow"></div> -->
+                                    <svg class="wind-arrow" width="30" height="30" viewBox="0 0 18 28"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                            fill="#FFFFFF"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="chart-container d-flex flex-row my-4">
+
+                <div class="first-chart">
+                    <div class="chart-area">
+
+                        <svg height="70" width="373">
+                            <rect x="9.678571428571429" y="57.49419230769231" height="17.50580769230769" width="29.6875"
+                                rx="3" ry="3" class="each-bar" id="bar1" data-toolpos="3.5">
+                            </rect>
+                            <rect x="55.95790816326531" y="56.61561538461538" height="18.38438461538462" width="29.6875"
+                                rx="3" ry="3" class="each-bar" id="bar2" data-toolpos="51">
+                            </rect>
+                            <rect x="102.23724489795919" y="51.78776923076923" height="23.21223076923077"
+                                width="29.6875" rx="3" ry="3" class="each-bar" id="bar3" data-toolpos="98.5">
+                            </rect>
+                            <rect x="148.51658163265304" y="50.913961538461535" height="24.08603846153846"
+                                width="29.6875" rx="3" ry="3" class="each-bar" id="bar4" data-toolpos="146">
+                            </rect>
+                            <rect x="194.79591836734693" y="43.16680769230769" height="31.833192307692308"
+                                width="29.6875" rx="3" ry="3" class="each-bar" id="bar5" data-toolpos="193.5">
+                            </rect>
+                            <rect x="241.0752551020408" y="34.59515384615385" height="40.40484615384615" width="29.6875"
+                                rx="3" ry="3" class="each-bar" id="bar6" data-toolpos="240.5">
+                            </rect>
+                            <rect x="287.3545918367347" y="43.48376923076923" height="31.51623076923077" width="29.6875"
+                                rx="3" ry="3" class="each-bar" id="bar7" data-toolpos="288">
+                            </rect>
+                            <rect x="333.6339285714286" y="56.8955" height="18.1045" width="29.6875" rx="3" ry="3"
+                                class="each-bar" id="bar8" data-toolpos="335.5">
+                            </rect>
+                        </svg>
+
+                        <div class="wind-info-container d-flex">
+                            <div class="wind-info d-flex flex-row">
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="timeline-bar">
+                            <div class="timeline-bar-wrapper">
+
+                                <div class="timeline-hour d-flex justify-content-center">12</div>
+                                <div class="timeline-hour d-flex justify-content-center">3</div>
+                                <div class="timeline-hour d-flex justify-content-center">6</div>
+                                <div class="timeline-hour d-flex justify-content-center">9</div>
+                                <div class="timeline-hour d-flex justify-content-center">12</div>
+                                <div class="timeline-hour d-flex justify-content-center">3</div>
+                                <div class="timeline-hour d-flex justify-content-center">6</div>
+                                <div class="timeline-hour d-flex justify-content-center">9</div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="second-chart">
+                    <div class="chart-area">
+
+                        <svg height="70" width="373">
+                            <rect x="9.678571428571429" y="57.49419230769231" height="17.50580769230769" width="29.6875"
+                                rx="3" ry="3" class="each-bar" id="bar1" data-toolpos="3.5">
+                            </rect>
+                            <rect x="55.95790816326531" y="56.61561538461538" height="18.38438461538462" width="29.6875"
+                                rx="3" ry="3" class="each-bar" id="bar2" data-toolpos="51">
+                            </rect>
+                            <rect x="102.23724489795919" y="51.78776923076923" height="23.21223076923077"
+                                width="29.6875" rx="3" ry="3" class="each-bar" id="bar3" data-toolpos="98.5">
+                            </rect>
+                            <rect x="148.51658163265304" y="50.913961538461535" height="24.08603846153846"
+                                width="29.6875" rx="3" ry="3" class="each-bar" id="bar4" data-toolpos="146">
+                            </rect>
+                            <rect x="194.79591836734693" y="43.16680769230769" height="31.833192307692308"
+                                width="29.6875" rx="3" ry="3" class="each-bar" id="bar5" data-toolpos="193.5">
+                            </rect>
+                            <rect x="241.0752551020408" y="34.59515384615385" height="40.40484615384615" width="29.6875"
+                                rx="3" ry="3" class="each-bar" id="bar6" data-toolpos="240.5">
+                            </rect>
+                            <rect x="287.3545918367347" y="43.48376923076923" height="31.51623076923077" width="29.6875"
+                                rx="3" ry="3" class="each-bar" id="bar7" data-toolpos="288">
+                            </rect>
+                            <rect x="333.6339285714286" y="56.8955" height="18.1045" width="29.6875" rx="3" ry="3"
+                                class="each-bar" id="bar8" data-toolpos="335.5">
+                            </rect>
+                        </svg>
+
+                        <div class="wind-info-container d-flex">
+                            <div class="wind-info d-flex flex-row">
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                                <div class="info-card text-center">
+                                    <div class="arrow">
+                                        <svg fill="none" height="8.44" viewBox="0 0 18 28" width="8.44"
+                                            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(1.65393deg);">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.397491 10.4293C0.00907967 10.9213 0.358464 11.6436 0.984813 11.6436L6.28319 11.6436V27.0704C6.28319 27.4842 6.61833 27.8194 7.03213 27.8194L10.5099 27.8194C10.9245 27.8194 11.261 27.4829 11.261 27.0683V11.6436L16.5559 11.6436C17.1829 11.6436 17.5341 10.92 17.1459 10.4283L9.36031 0.567877C9.06023 0.187832 8.48353 0.188333 8.18304 0.5689L0.397491 10.4293Z"
+                                                fill="#171717"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="speed">3</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="timeline-bar">
+                            <div class="timeline-bar-wrapper">
+
+                                <div class="timeline-hour d-flex justify-content-center">12</div>
+                                <div class="timeline-hour d-flex justify-content-center">3</div>
+                                <div class="timeline-hour d-flex justify-content-center">6</div>
+                                <div class="timeline-hour d-flex justify-content-center">9</div>
+                                <div class="timeline-hour d-flex justify-content-center">12</div>
+                                <div class="timeline-hour d-flex justify-content-center">3</div>
+                                <div class="timeline-hour d-flex justify-content-center">6</div>
+                                <div class="timeline-hour d-flex justify-content-center">9</div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Tide Chart -->
+    <div class="s-tidechart mt-5">
+        <div class="container">
+
+            <div class="chart-container d-flex flex-row my-4">
+
+                <div class="first-chart">
+                    <div class="chart-area">
+
+                    </div>
+                </div>
+
+
+                <div class="tidechart-container">
+
+                    <svg class="tide-chart-svg-day-2" position="relative" width="100vw" height="100">
+                        <path x1="0" x2="0" class="tide-chart-svg-2-fill"
+                            d="M-1,65L1.6666666666666667,66C4.333333333333333,67,9.666666666666666,69,14.833333333333334,70.83333333333333C20,72.66666666666667,25,74.33333333333333,29.833333333333332,75.33333333333333C34.666666666666664,76.33333333333333,39.333333333333336,76.66666666666667,42,76.83333333333333C44.666666666666664,77,45.333333333333336,77,48.166666666666664,76.66666666666667C51,76.33333333333333,56,75.66666666666667,61.166666666666664,74.33333333333333C66.33333333333333,73,71.66666666666667,71,76.83333333333333,68.83333333333333C82,66.66666666666667,87,64.33333333333333,92.16666666666667,61.833333333333336C97.33333333333333,59.333333333333336,102.66666666666667,56.666666666666664,107.83333333333333,54.333333333333336C113,52,118,50,123.16666666666667,48.666666666666664C128.33333333333334,47.333333333333336,133.66666666666666,46.666666666666664,136.33333333333334,46.333333333333336C139,46,139,46,141.5,46.333333333333336C144,46.666666666666664,149,47.333333333333336,154.16666666666666,48.666666666666664C159.33333333333334,50,164.66666666666666,52,170,54.333333333333336C175.33333333333334,56.666666666666664,180.66666666666666,59.333333333333336,185.83333333333334,62.166666666666664C191,65,196,68,201.16666666666666,70.66666666666667C206.33333333333334,73.33333333333333,211.66666666666666,75.66666666666667,216.83333333333334,77.83333333333333C222,80,227,82,231.66666666666666,83.16666666666667C236.33333333333334,84.33333333333333,240.66666666666666,84.66666666666667,243.33333333333334,84.83333333333333C246,85,247,85,250,84.5C253,84,258,83,263.1666666666667,81.5C268.3333333333333,80,273.6666666666667,78,278.8333333333333,75.83333333333333C284,73.66666666666667,289,71.33333333333333,294.1666666666667,69C299.3333333333333,66.66666666666667,304.6666666666667,64.33333333333333,309.8333333333333,62.333333333333336C315,60.333333333333336,320,58.666666666666664,325,57.666666666666664C330,56.666666666666664,335,56.333333333333336,337.6666666666667,56.166666666666664C340.3333333333333,56,340.6666666666667,56,343.3333333333333,56.166666666666664C346,56.333333333333336,351,56.666666666666664,356.1666666666667,57.666666666666664C361.3333333333333,58.666666666666664,366.6666666666667,60.333333333333336,369.3333333333333,61.166666666666664C372,62,372,62,374.6666666666667,62.833333333333336C377.3333333333333,63.666666666666664,382.6666666666667,65.33333333333333,387.8333333333333,67C393,68.66666666666667,398,70.33333333333333,403.1666666666667,71.5C408.3333333333333,72.66666666666667,413.6666666666667,73.33333333333333,417.5,73.83333333333333C421.3333333333333,74.33333333333333,423.6666666666667,74.66666666666667,426.1666666666667,74.66666666666667C428.6666666666667,74.66666666666667,431.3333333333333,74.33333333333333,435.3333333333333,73.5C439.3333333333333,72.66666666666667,444.6666666666667,71.33333333333333,449.8333333333333,69.66666666666667C455,68,460,66,465.1666666666667,63.833333333333336C470.3333333333333,61.666666666666664,475.6666666666667,59.333333333333336,480.8333333333333,57C486,54.666666666666664,491,52.333333333333336,496.1666666666667,50.5C501.3333333333333,48.666666666666664,506.6666666666667,47.333333333333336,510.6666666666667,46.5C514.6666666666666,45.666666666666664,517.3333333333334,45.333333333333336,519.8333333333334,45.333333333333336C522.3333333333334,45.333333333333336,524.6666666666666,45.666666666666664,528.5,46.5C532.3333333333334,47.333333333333336,537.6666666666666,48.666666666666664,543,50.333333333333336C548.3333333333334,52,553.6666666666666,54,558.8333333333334,56.5C564,59,569,62,574.1666666666666,65C579.3333333333334,68,584.6666666666666,71,589.8333333333334,73.66666666666667C595,76.33333333333333,600,78.66666666666667,605.1666666666666,80.5C610.3333333333334,82.33333333333333,615.6666666666666,83.66666666666667,619.8333333333334,84.5C624,85.33333333333333,627,85.66666666666667,629.5,85.66666666666667C632,85.66666666666667,634,85.33333333333333,637.6666666666666,84.66666666666667C641.3333333333334,84,646.6666666666666,83,651.8333333333334,81.5C657,80,662,78,667.1666666666666,75.83333333333333C672.3333333333334,73.66666666666667,677.6666666666666,71.33333333333333,682.8333333333334,69.16666666666667C688,67,693,65,698.1666666666666,63.333333333333336C703.3333333333334,61.666666666666664,708.6666666666666,60.333333333333336,713.3333333333334,59.5C718,58.666666666666664,722,58.333333333333336,724.5,58.166666666666664C727,58,728,58,731.1666666666666,58.333333333333336C734.3333333333334,58.666666666666664,739.6666666666666,59.333333333333336,742.3333333333334,59.666666666666664C745,60,745,60,747.6666666666666,60.5C750.3333333333334,61,755.6666666666666,62,760.8333333333334,63.333333333333336C766,64.66666666666667,771,66.33333333333333,776.1666666666666,67.66666666666667C781.3333333333334,69,786.6666666666666,70,791.8333333333334,70.66666666666667C797,71.33333333333333,802,71.66666666666667,804.5,71.83333333333333C807,72,807,72,809.6666666666666,71.66666666666667C812.3333333333334,71.33333333333333,817.6666666666666,70.66666666666667,822.8333333333334,69.66666666666667C828,68.66666666666667,833,67.33333333333333,838.1666666666666,65.66666666666667C843.3333333333334,64,848.6666666666666,62,853.8333333333334,59.833333333333336C859,57.666666666666664,864,55.333333333333336,869.1666666666666,53.333333333333336C874.3333333333334,51.333333333333336,879.6666666666666,49.666666666666664,884.8333333333334,48.5C890,47.333333333333336,895,46.666666666666664,897.6666666666666,46.333333333333336C900.3333333333334,46,900.6666666666666,46,903.3333333333334,46.333333333333336C906,46.666666666666664,911,47.333333333333336,916.1666666666666,48.333333333333336C921.3333333333334,49.333333333333336,926.6666666666666,50.666666666666664,931.8333333333334,52.666666666666664C937,54.666666666666664,942,57.333333333333336,947.1666666666666,60C952.3333333333334,62.666666666666664,957.6666666666666,65.33333333333333,962.8333333333334,68C968,70.66666666666667,973,73.33333333333333,978.1666666666666,75.66666666666667C983.3333333333334,78,988.6666666666666,80,993.8333333333334,81.5C999,83,1004,84,1007.5,84.5C1011,85,1013,85,1015.6666666666666,84.83333333333333C1018.3333333333334,84.66666666666667,1021.6666666666666,84.33333333333333,1025.8333333333333,83.66666666666667C1030,83,1035,82,1040.1666666666667,80.5C1045.3333333333333,79,1050.6666666666667,77,1055.8333333333333,75C1061,73,1066,71,1071.1666666666667,69.16666666666667C1076.3333333333333,67.33333333333333,1081.6666666666667,65.66666666666667,1086.8333333333333,64.33333333333333C1092,63,1097,62,1101.3333333333333,61.333333333333336C1105.6666666666667,60.666666666666664,1109.3333333333333,60.333333333333336,1112,60.166666666666664C1114.6666666666667,60,1116.3333333333333,60,1117.1666666666667,60L1118,60L1118,100L1117.1666666666667,100C1116.3333333333333,100,1114.6666666666667,100,1112,100C1109.3333333333333,100,1105.6666666666667,100,1101.3333333333333,100C1097,100,1092,100,1086.8333333333333,100C1081.6666666666667,100,1076.3333333333333,100,1071.1666666666667,100C1066,100,1061,100,1055.8333333333333,100C1050.6666666666667,100,1045.3333333333333,100,1040.1666666666667,100C1035,100,1030,100,1025.8333333333333,100C1021.6666666666666,100,1018.3333333333334,100,1015.6666666666666,100C1013,100,1011,100,1007.5,100C1004,100,999,100,993.8333333333334,100C988.6666666666666,100,983.3333333333334,100,978.1666666666666,100C973,100,968,100,962.8333333333334,100C957.6666666666666,100,952.3333333333334,100,947.1666666666666,100C942,100,937,100,931.8333333333334,100C926.6666666666666,100,921.3333333333334,100,916.1666666666666,100C911,100,906,100,903.3333333333334,100C900.6666666666666,100,900.3333333333334,100,897.6666666666666,100C895,100,890,100,884.8333333333334,100C879.6666666666666,100,874.3333333333334,100,869.1666666666666,100C864,100,859,100,853.8333333333334,100C848.6666666666666,100,843.3333333333334,100,838.1666666666666,100C833,100,828,100,822.8333333333334,100C817.6666666666666,100,812.3333333333334,100,809.6666666666666,100C807,100,807,100,804.5,100C802,100,797,100,791.8333333333334,100C786.6666666666666,100,781.3333333333334,100,776.1666666666666,100C771,100,766,100,760.8333333333334,100C755.6666666666666,100,750.3333333333334,100,747.6666666666666,100C745,100,745,100,742.3333333333334,100C739.6666666666666,100,734.3333333333334,100,731.1666666666666,100C728,100,727,100,724.5,100C722,100,718,100,713.3333333333334,100C708.6666666666666,100,703.3333333333334,100,698.1666666666666,100C693,100,688,100,682.8333333333334,100C677.6666666666666,100,672.3333333333334,100,667.1666666666666,100C662,100,657,100,651.8333333333334,100C646.6666666666666,100,641.3333333333334,100,637.6666666666666,100C634,100,632,100,629.5,100C627,100,624,100,619.8333333333334,100C615.6666666666666,100,610.3333333333334,100,605.1666666666666,100C600,100,595,100,589.8333333333334,100C584.6666666666666,100,579.3333333333334,100,574.1666666666666,100C569,100,564,100,558.8333333333334,100C553.6666666666666,100,548.3333333333334,100,543,100C537.6666666666666,100,532.3333333333334,100,528.5,100C524.6666666666666,100,522.3333333333334,100,519.8333333333334,100C517.3333333333334,100,514.6666666666666,100,510.6666666666667,100C506.6666666666667,100,501.3333333333333,100,496.1666666666667,100C491,100,486,100,480.8333333333333,100C475.6666666666667,100,470.3333333333333,100,465.1666666666667,100C460,100,455,100,449.8333333333333,100C444.6666666666667,100,439.3333333333333,100,435.3333333333333,100C431.3333333333333,100,428.6666666666667,100,426.1666666666667,100C423.6666666666667,100,421.3333333333333,100,417.5,100C413.6666666666667,100,408.3333333333333,100,403.1666666666667,100C398,100,393,100,387.8333333333333,100C382.6666666666667,100,377.3333333333333,100,374.6666666666667,100C372,100,372,100,369.3333333333333,100C366.6666666666667,100,361.3333333333333,100,356.1666666666667,100C351,100,346,100,343.3333333333333,100C340.6666666666667,100,340.3333333333333,100,337.6666666666667,100C335,100,330,100,325,100C320,100,315,100,309.8333333333333,100C304.6666666666667,100,299.3333333333333,100,294.1666666666667,100C289,100,284,100,278.8333333333333,100C273.6666666666667,100,268.3333333333333,100,263.1666666666667,100C258,100,253,100,250,100C247,100,246,100,243.33333333333334,100C240.66666666666666,100,236.33333333333334,100,231.66666666666666,100C227,100,222,100,216.83333333333334,100C211.66666666666666,100,206.33333333333334,100,201.16666666666666,100C196,100,191,100,185.83333333333334,100C180.66666666666666,100,175.33333333333334,100,170,100C164.66666666666666,100,159.33333333333334,100,154.16666666666666,100C149,100,144,100,141.5,100C139,100,139,100,136.33333333333334,100C133.66666666666666,100,128.33333333333334,100,123.16666666666667,100C118,100,113,100,107.83333333333333,100C102.66666666666667,100,97.33333333333333,100,92.16666666666667,100C87,100,82,100,76.83333333333333,100C71.66666666666667,100,66.33333333333333,100,61.166666666666664,100C56,100,51,100,48.166666666666664,100C45.333333333333336,100,44.666666666666664,100,42,100C39.333333333333336,100,34.666666666666664,100,29.833333333333332,100C25,100,20,100,14.833333333333334,100C9.666666666666666,100,4.333333333333333,100,1.6666666666666667,100L-1,100Z"
+                            fill="rgba(185, 211, 223, 0.4)"></path>
+                        <path x1="0" x2="0" class="tide-chart-svg-2-fill"
+                            d="M-1,65L1.6666666666666667,66C4.333333333333333,67,9.666666666666666,69,14.833333333333334,70.83333333333333C20,72.66666666666667,25,74.33333333333333,29.833333333333332,75.33333333333333C34.666666666666664,76.33333333333333,39.333333333333336,76.66666666666667,42,76.83333333333333C44.666666666666664,77,45.333333333333336,77,48.166666666666664,76.66666666666667C51,76.33333333333333,56,75.66666666666667,61.166666666666664,74.33333333333333C66.33333333333333,73,71.66666666666667,71,76.83333333333333,68.83333333333333C82,66.66666666666667,87,64.33333333333333,92.16666666666667,61.833333333333336C97.33333333333333,59.333333333333336,102.66666666666667,56.666666666666664,107.83333333333333,54.333333333333336C113,52,118,50,123.16666666666667,48.666666666666664C128.33333333333334,47.333333333333336,133.66666666666666,46.666666666666664,136.33333333333334,46.333333333333336C139,46,139,46,141.5,46.333333333333336C144,46.666666666666664,149,47.333333333333336,154.16666666666666,48.666666666666664C159.33333333333334,50,164.66666666666666,52,170,54.333333333333336C175.33333333333334,56.666666666666664,180.66666666666666,59.333333333333336,185.83333333333334,62.166666666666664C191,65,196,68,201.16666666666666,70.66666666666667C206.33333333333334,73.33333333333333,211.66666666666666,75.66666666666667,216.83333333333334,77.83333333333333C222,80,227,82,231.66666666666666,83.16666666666667C236.33333333333334,84.33333333333333,240.66666666666666,84.66666666666667,243.33333333333334,84.83333333333333C246,85,247,85,250,84.5C253,84,258,83,263.1666666666667,81.5C268.3333333333333,80,273.6666666666667,78,278.8333333333333,75.83333333333333C284,73.66666666666667,289,71.33333333333333,294.1666666666667,69C299.3333333333333,66.66666666666667,304.6666666666667,64.33333333333333,309.8333333333333,62.333333333333336C315,60.333333333333336,320,58.666666666666664,325,57.666666666666664C330,56.666666666666664,335,56.333333333333336,337.6666666666667,56.166666666666664C340.3333333333333,56,340.6666666666667,56,343.3333333333333,56.166666666666664C346,56.333333333333336,351,56.666666666666664,356.1666666666667,57.666666666666664C361.3333333333333,58.666666666666664,366.6666666666667,60.333333333333336,369.3333333333333,61.166666666666664C372,62,372,62,374.6666666666667,62.833333333333336C377.3333333333333,63.666666666666664,382.6666666666667,65.33333333333333,387.8333333333333,67C393,68.66666666666667,398,70.33333333333333,403.1666666666667,71.5C408.3333333333333,72.66666666666667,413.6666666666667,73.33333333333333,417.5,73.83333333333333C421.3333333333333,74.33333333333333,423.6666666666667,74.66666666666667,426.1666666666667,74.66666666666667C428.6666666666667,74.66666666666667,431.3333333333333,74.33333333333333,435.3333333333333,73.5C439.3333333333333,72.66666666666667,444.6666666666667,71.33333333333333,449.8333333333333,69.66666666666667C455,68,460,66,465.1666666666667,63.833333333333336C470.3333333333333,61.666666666666664,475.6666666666667,59.333333333333336,480.8333333333333,57C486,54.666666666666664,491,52.333333333333336,496.1666666666667,50.5C501.3333333333333,48.666666666666664,506.6666666666667,47.333333333333336,510.6666666666667,46.5C514.6666666666666,45.666666666666664,517.3333333333334,45.333333333333336,519.8333333333334,45.333333333333336C522.3333333333334,45.333333333333336,524.6666666666666,45.666666666666664,528.5,46.5C532.3333333333334,47.333333333333336,537.6666666666666,48.666666666666664,543,50.333333333333336C548.3333333333334,52,553.6666666666666,54,558.8333333333334,56.5C564,59,569,62,574.1666666666666,65C579.3333333333334,68,584.6666666666666,71,589.8333333333334,73.66666666666667C595,76.33333333333333,600,78.66666666666667,605.1666666666666,80.5C610.3333333333334,82.33333333333333,615.6666666666666,83.66666666666667,619.8333333333334,84.5C624,85.33333333333333,627,85.66666666666667,629.5,85.66666666666667C632,85.66666666666667,634,85.33333333333333,637.6666666666666,84.66666666666667C641.3333333333334,84,646.6666666666666,83,651.8333333333334,81.5C657,80,662,78,667.1666666666666,75.83333333333333C672.3333333333334,73.66666666666667,677.6666666666666,71.33333333333333,682.8333333333334,69.16666666666667C688,67,693,65,698.1666666666666,63.333333333333336C703.3333333333334,61.666666666666664,708.6666666666666,60.333333333333336,713.3333333333334,59.5C718,58.666666666666664,722,58.333333333333336,724.5,58.166666666666664C727,58,728,58,731.1666666666666,58.333333333333336C734.3333333333334,58.666666666666664,739.6666666666666,59.333333333333336,742.3333333333334,59.666666666666664C745,60,745,60,747.6666666666666,60.5C750.3333333333334,61,755.6666666666666,62,760.8333333333334,63.333333333333336C766,64.66666666666667,771,66.33333333333333,776.1666666666666,67.66666666666667C781.3333333333334,69,786.6666666666666,70,791.8333333333334,70.66666666666667C797,71.33333333333333,802,71.66666666666667,804.5,71.83333333333333C807,72,807,72,809.6666666666666,71.66666666666667C812.3333333333334,71.33333333333333,817.6666666666666,70.66666666666667,822.8333333333334,69.66666666666667C828,68.66666666666667,833,67.33333333333333,838.1666666666666,65.66666666666667C843.3333333333334,64,848.6666666666666,62,853.8333333333334,59.833333333333336C859,57.666666666666664,864,55.333333333333336,869.1666666666666,53.333333333333336C874.3333333333334,51.333333333333336,879.6666666666666,49.666666666666664,884.8333333333334,48.5C890,47.333333333333336,895,46.666666666666664,897.6666666666666,46.333333333333336C900.3333333333334,46,900.6666666666666,46,903.3333333333334,46.333333333333336C906,46.666666666666664,911,47.333333333333336,916.1666666666666,48.333333333333336C921.3333333333334,49.333333333333336,926.6666666666666,50.666666666666664,931.8333333333334,52.666666666666664C937,54.666666666666664,942,57.333333333333336,947.1666666666666,60C952.3333333333334,62.666666666666664,957.6666666666666,65.33333333333333,962.8333333333334,68C968,70.66666666666667,973,73.33333333333333,978.1666666666666,75.66666666666667C983.3333333333334,78,988.6666666666666,80,993.8333333333334,81.5C999,83,1004,84,1007.5,84.5C1011,85,1013,85,1015.6666666666666,84.83333333333333C1018.3333333333334,84.66666666666667,1021.6666666666666,84.33333333333333,1025.8333333333333,83.66666666666667C1030,83,1035,82,1040.1666666666667,80.5C1045.3333333333333,79,1050.6666666666667,77,1055.8333333333333,75C1061,73,1066,71,1071.1666666666667,69.16666666666667C1076.3333333333333,67.33333333333333,1081.6666666666667,65.66666666666667,1086.8333333333333,64.33333333333333C1092,63,1097,62,1101.3333333333333,61.333333333333336C1105.6666666666667,60.666666666666664,1109.3333333333333,60.333333333333336,1112,60.166666666666664C1114.6666666666667,60,1116.3333333333333,60,1117.1666666666667,60L1118,60"
+                            stroke="#171717" stroke-width="1.5px" fill="none"></path>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242" x="44"
+                                y="67">0.8ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="44" y="55">2:55am</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="44" x2="44" y1="78" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="139" y="36">6.3ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="139" y="24">9:00am</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="139" x2="139" y1="47" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="245" y="75">-0.6ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="245" y="63">3:51pm</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="245" x2="245" y1="86" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="340" y="46">4.6ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="340" y="34">9:55pm</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="340" x2="340" y1="57" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="426" y="65">1.2ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="426" y="53">3:26am</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="426" x2="426" y1="76" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="520" y="35">6.4ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="520" y="23">9:31am</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="520" x2="520" y1="46" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="630" y="76">-0.8ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="630" y="64">4:35pm</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="630" x2="630" y1="87" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="726" y="48">4.2ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="726" y="36">10:45pm</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="726" x2="726" y1="59" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="807" y="62">1.7ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="807" y="50">3:57am</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="807" x2="807" y1="73" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="901" y="36">6.3ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="901" y="24">10:03am</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="901" x2="901" y1="47" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="1015" y="75">-0.7ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="1015" y="63">5:21pm</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="1015" x2="1015" y1="86" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                        <g class="tide-chart-svg-2-high-low"><text
+                                class="tide-chart-svg-high-low-label tide-chart-svg-2-high-low-label"
+                                data-testid="tide-chart-svg-high-low-label" text-anchor="middle" font-size="10px"
+                                font-weight="600" font-family="Linear Sans" line-height="16px" fill="#424242"
+                                x="1113" y="50">3.8ft</text><text
+                                class="tide-chart-svg-time-label tide-chart-svg-2-time-label"
+                                data-testid="tide-chart-svg-time-label" text-anchor="middle" font-size="10px"
+                                font-weight="700" font-family="Linear Sans" line-height="16px" fill="#171717"
+                                z-index="999" x="1113" y="38">11:40pm</text>
+                            <line class="tide-chart-svg-2-high-low-line" x1="1113" x2="1113" y1="61" y2="100%"
+                                style="stroke-width: 1; stroke: rgb(23, 23, 23); opacity: 0.4; fill: none;"></line>
+                        </g>
+                    </svg>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
 
 
 
