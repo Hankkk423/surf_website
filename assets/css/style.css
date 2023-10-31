@@ -198,10 +198,11 @@
 
 
 /*** Grid Box ***/
-/* .s-gridbox .card-1 .information {
-    display: flex;
-    flex-direction: row;
-} */
+/* Custom bootstrap */
+.s-gridbox .card {
+    height: 100%;
+}
+/* End Custom bootstrap */
 
 .s-gridbox .card-1 .condition {
     width: 6px;
