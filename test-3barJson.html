@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wave Height Bar Charts</title>
+</head>
+<body>
+
+    <div class="chart-area"></div>
+
+    <div class="chart-area-1"></div>
+    <div class="chart-area-2"></div>
+    <div class="chart-area-3"></div>
+
+    <script>  
+
+        // JSON data for wave heights
+        const waveData = {
+            "waves_height-surface": [
+                0.4059411518866333, 0.6975763441625912, 0.4626913880802731, 0.38946527686267346, 0.693532635576465, 0.6606378391706036, 0.44872960954145047, 0.3663339619524918,
+                0.740242758298714, 0.6475466377318128, 0.45272450072009984, 0.4623578024625038, 0.8334758703478778, 0.4062747375044025, 0.446345692809589, 0.6506709518104303,
+                0.4263386919780249, 0.3663339619524918, 0.8762643280026949, 0.41311731078595837, 0.714263761285626, 0.43584181396715316, 0.41624162486457583, 0.9486930882314804,
+                0.6931258238474782, 0.6346588421575154, 0.7607135245013231, 0.631534528078898,
+            ]
+        };
+
+        // Create an array to separate data into daily segments
+        const days = [
+            waveData["waves_height-surface"].slice(0, 8),
+            waveData["waves_height-surface"].slice(8, 16),
+            waveData["waves_height-surface"].slice(16, 24)
+        ];
+
+        // SVG chart dimensions
+        // const svgWidth = 400;
+        // const svgHeight = 200;
+        const svgWidth = 379;
+        const svgHeight = 116;
+
+        // Bar chart dimensions and styling
+        const barSpacing = 10; // Space between bars
+        const maxBarHeight = 160;
+        const chartColor = "blue";
+
+        days.forEach((dayData, index) => {
+            // Create an SVG element for each day
+            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("width", svgWidth);
+            svg.setAttribute("height", svgHeight);
+            // document.body.appendChild(svg);
+            // Append the SVG element to the "chart-area" div
+            // const chartArea = document.querySelector('.chart-area');
+            // chartArea.appendChild(svg);
+            // Append the SVG element to the corresponding chart area div
+            const chartArea = document.querySelector('.chart-area-' + (index + 1));
+            chartArea.appendChild(svg);
+
+            const numBars = dayData.length;
+            const barWidth = (svgWidth - (numBars - 1) * barSpacing - 20) / numBars; // Subtract 20 for spacing
+
+            // Generate bars based on JSON data for the day
+            dayData.forEach((height, barIndex) => {
+                const x = barIndex * (barWidth + barSpacing) + 10; // Add 10 for spacing on the left
+                const barHeight = height * maxBarHeight;
+                const y = maxBarHeight - barHeight;
+                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("x", x);
+                rect.setAttribute("y", y);
+                rect.setAttribute("width", barWidth);
+                rect.setAttribute("height", barHeight);
+                rect.setAttribute("fill", chartColor);
+
+                console.log("barIndex: ", barIndex);
+
+                rect.setAttribute("id", "bar" + (barIndex + 1));
+                rect.setAttribute("class", "each-bar");
+
+                svg.appendChild(rect);
+            });
+        });
+
+    </script>
+</body>
+</html>
