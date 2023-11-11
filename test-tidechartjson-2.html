@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add your CSS styles here */
+        .tide-chart-svg {
+            width: 1200px;
+            height: 200px;
+            /* Adjust the height as needed */
+        }
+    </style>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+
+    <svg class="tide-chart-svg" xmlns="http://www.w3.org/2000/svg">
+        <!-- Your JavaScript code will generate the path element here -->
+    </svg>
+
+    <script>
+        // Sample JSON data (replace this with your actual JSON data)
+        const jsonData = {
+            "data": [
+                { "x": 0, "y": 200, "Date": "", "Time": "" },
+                { "x": 1, "y": 100, "Date": "", "Time": "" },
+                { "x": 54, "y": 68, "Date": "11/11", "Time": "05:19" },
+                { "x": 111, "y": 141, "Date": "11/11", "Time": "11:03" },
+                { "x": 171, "y": 55, "Date": "11/11", "Time": "17:01" },
+                { "x": 237, "y": 168, "Date": "11/11", "Time": "23:40" },
+                { "x": 300, "y": 63, "Date": "11/12", "Time": "05:59" },
+                { "x": 356, "y": 137, "Date": "11/12", "Time": "11:34" },
+                { "x": 414, "y": 49, "Date": "11/12", "Time": "17:24" },
+                { "x": 482, "y": 180, "Date": "11/13", "Time": "00:11" },
+                { "x": 547, "y": 61, "Date": "11/13", "Time": "06:38" },
+                { "x": 601, "y": 133, "Date": "11/13", "Time": "12:06" },
+                { "x": 659, "y": 44, "Date": "11/13", "Time": "17:50" },
+                { "x": 719, "y": 100, "Date": "", "Time": "" },
+                { "x": 720, "y": 200, "Date": "", "Time": "" },
+            ]
+        };
+
+        // Set up the SVG container
+        const svg = d3.select(".tide-chart-svg");
+
+        // Calculate scaling factor based on SVG width
+        const svgWidth = parseInt(svg.style("width"));
+        const scaleFactor = svgWidth / 720; // Assuming the original range is 0 to 720
+
+        // Apply scaling to x-coordinates
+        jsonData.data.forEach(d => {
+            d.x = d.x * scaleFactor;
+        });
+
+
+        // Create a smooth line generator
+        const line = d3.line()
+            .x(d => d.x)
+            .y(d => d.y)
+            // .curve(d3.curveBasis); // Use curveBasis for a smooth curve
+            .curve(d3.curveCardinal.tension(0.1)); // Adjust the tension parameter (0.7 is just an example)
+
+        // Draw the path
+        svg.append("path")
+            .data([jsonData.data])
+            .attr("d", line)
+            .attr("fill", "rgba(185, 211, 223, 0.4)");
+
+        // Draw the path stroke="#171717" stroke-width="1.5px" fill="none"
+        svg.append("path")
+            .data([jsonData.data])
+            .attr("d", line)
+            .attr("stroke", "#171717")
+            .attr("stroke-width", "1.5px")
+            .attr("fill", "none");
+
+
+
+        // Draw vertical strokes for each point
+        const verticalStrokes = svg.selectAll("g.vertical-stroke")
+            // .data(jsonData.data.filter(d => d.x !== 0 && d.x !== 1 && d.x !== 719 && d.x !== 720))
+            .data(jsonData.data.slice(2, -2)) // Exclude first two and last two elements
+            .enter()
+            .append("g")
+            .attr("class", "vertical-stroke");
+
+        verticalStrokes.append("line")
+            .attr("x1", d => d.x)
+            .attr("x2", d => d.x)
+            .attr("y1", d => d.y) // Extracting y-coordinate from the curved line path
+            .attr("y2", 200) // Adjust the y2 value based on your chart height
+            .attr("stroke", "#171717")
+            .attr("stroke-width", "1.5px");
+
+
+        // Add text labels with formatted DateTime
+        verticalStrokes.append("text")
+            .attr("x", d => d.x)
+            .attr("y", d => d.y - 30) // Adjust the y-coordinate for text positioning
+            .attr("text-anchor", "middle")
+
+            // .text(d => d.Date)
+
+            .text(d => {
+                // // Format the DateTime as needed
+                // const dateTime = new Date(d.DateTime);
+                // const month = dateTime.getMonth() + 1;
+                // const day = dateTime.getDate();
+                // const hours = dateTime.getHours().toString().padStart(2, '0');
+                // const minutes = dateTime.getMinutes().toString().padStart(2, '0');
+                // return `${month}/${day} ${hours}:${minutes}`;
+
+                const date = d.Date;
+                const time = d.Time;
+                return `${date} ${time}`;
+            })
+
+            .attr("fill", "#171717")
+            .attr("font-size", "10px")
+            .attr("font-weight", "700");
+
+
+        // Add text labels with formatted DateTime
+        verticalStrokes.append("text")
+            .attr("x", d => d.x)
+            .attr("y", d => d.y - 15) // Adjust the y-coordinate for text positioning
+            .attr("text-anchor", "middle")
+
+            .text(d => {
+                const tideheight = (100 - d.y)/100;
+                return `${tideheight} m`;
+            })
+
+            .attr("fill", "#171717")
+            .attr("font-size", "10px")
+            .attr("font-weight", "700");
+
+
+
+
+    </script>
+
+</body>
+
+</html>
