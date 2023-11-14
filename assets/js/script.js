@@ -137,6 +137,29 @@ $(document).ready(function () {
         });
     });
 
+
+    // Function to update bar width on window resize
+    function updateWaveBarWidth() {
+        days.forEach((dayData, index) => {
+            const waveSvgId = "wave-svg-" + (index + 1);
+            const waveSvg = document.getElementById(waveSvgId);
+            const waveSvgWidth = waveSvg.clientWidth;
+
+            const numBars = dayData.length;
+            const barWidth = (waveSvgWidth - (numBars - 1) * barSpacing - 20) / numBars; // Subtract 20 for spacing
+
+            dayData.forEach((height, barIndex) => {
+                const rect = waveSvg.getElementById("bar" + ((index * numBars) + barIndex + 1));
+                const x = barIndex * (barWidth + barSpacing) + 10; // Add 10 for spacing on the left
+                rect.setAttribute("x", x);
+                rect.setAttribute("width", barWidth);
+            });
+        });
+    }
+
+    // Event listener for window resize
+    window.addEventListener("resize", updateWaveBarWidth);
+
 });
 
 
@@ -190,7 +213,6 @@ $(document).ready(function () {
     days.forEach((dayData, index) => {
         const windSvgId = "wind-svg-" + (index + 1);
         const windSvg = document.getElementById(windSvgId);
-        console.log("test: ", windSvg);
         // const svgWidth = contain.clientWidth/3;
         const windSvgWidth = windSvg.clientWidth;
 
@@ -218,7 +240,31 @@ $(document).ready(function () {
         });
     });
 
+
+    // Function to update bar width on window resize
+    function updateWindBarWidth() {
+        days.forEach((dayData, index) => {
+            const windSvgId = "wind-svg-" + (index + 1);
+            const windSvg = document.getElementById(windSvgId);
+            const windSvgWidth = windSvg.clientWidth;
+
+            const numBars = dayData.length;
+            const barWidth = (windSvgWidth - (numBars - 1) * barSpacing - 20) / numBars; // Subtract 20 for spacing
+
+            dayData.forEach((height, barIndex) => {
+                const rect = windSvg.getElementById("bar" + ((index * numBars) + barIndex + 1));
+                const x = barIndex * (barWidth + barSpacing) + 10; // Add 10 for spacing on the left
+                rect.setAttribute("x", x);
+                rect.setAttribute("width", barWidth);
+            });
+        });
+    }
+
+    // Event listener for window resize
+    window.addEventListener("resize", updateWindBarWidth);
+
 });
+
 
 
 
@@ -397,7 +443,7 @@ $(document).ready(function () {
     const scaleFactorX = svgWidth / 720; // Assuming the original range is 0 to 720
     const svgHeight = parseInt(svg.style("height"));
     const scaleFactorY = svgHeight / 200; // Assuming the original range is 0 to 200
-    
+
 
     // Apply scaling to x-coordinates
     jsonData.data.forEach(d => {
@@ -477,5 +523,67 @@ $(document).ready(function () {
         .attr("fill", "#171717")
         .attr("font-size", "10px")
         .attr("font-weight", "700");
+
+
+
+
+    //////////TEMP//////////
+    // Function to update tide chart on window resize
+    function updateTideChart() {
+        // Calculate scaling factor based on updated SVG width and height
+        const tideSvg = d3.select(".s-tidechart .tide-chart-svg");
+        const tideSvgWidth = parseInt(tideSvg.style("width"));
+        console.log("test11: ", tideSvgWidth);
+        const scaleFactorX = tideSvgWidth / 720; // Assuming the original range is 0 to 720
+        const tideSvgHeight = parseInt(tideSvg.style("height"));
+        const scaleFactorY = tideSvgHeight / 200; // Assuming the original range is 0 to 200
+
+        // Apply scaling to x-coordinates
+        jsonData.data.forEach(d => {
+            d.x = d.x * scaleFactorX;
+            d.y = d.y * scaleFactorY;
+        });
+
+        // Update the line generator with new scaled data
+        const line = d3.line()
+            .x(d => d.x)
+            .y(d => d.y)
+            .curve(d3.curveCardinal.tension(0.1)); // Adjust the tension parameter (0.7 is just an example)
+
+        // Update the path with new data
+        tideSvg.select(".tide-chart-path")
+            .data([jsonData.data])
+            .attr("d", line);
+
+        // Update vertical strokes based on new data
+        const verticalStrokes = tideSvg.selectAll("g.vertical-stroke")
+            .data(jsonData.data.slice(2, -2));
+
+        verticalStrokes.select("line")
+            .attr("x1", d => d.x)
+            .attr("x2", d => d.x)
+            .attr("y1", d => d.y)
+            .attr("y2", tideSvgHeight);
+
+        // Update text labels with formatted DateTime
+        verticalStrokes.select("text:first-child")
+            .attr("x", d => d.x)
+            .attr("y", d => d.y - 16)
+            .text(d => `${d.Date} ${d.Time}`);
+
+        // Update text labels with tide height
+        verticalStrokes.select("text:last-child")
+            .attr("x", d => d.x)
+            .attr("y", d => d.y - 6)
+            .text(d => {
+                const tideheight = ((100 - (d.y / scaleFactorY)) / 100).toFixed(2);
+                return `${tideheight} m`;
+            });
+    }
+
+    // Event listener for window resize
+    // window.addEventListener("resize", updateTideChart);
+    //////////TEMP//////////
+
 
 });
