@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Wave Height Bar Charts</title>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <style>
+
+        .chart-area-1,
+        .chart-area-2,
+        .chart-area-3 {
+            flex: 1; /* Each chart area takes up 1/3 of the container's width */
+            
+        }
+
+        .wave-chart-svg {
+            width: 100%; /* Make the SVG element fill the entire container */
+            height: 100%;
+        }
+    </style>
+
 </head>
+
 <body>
 
-    <div class="chart-area"></div>
+    <!-- <div class="chart-area"></div>
 
     <div class="chart-area-1"></div>
     <div class="chart-area-2"></div>
-    <div class="chart-area-3"></div>
+    <div class="chart-area-3"></div> -->
 
-    <script>  
+    <div class="container d-flex flex-row">
+        <div class="chart-area-1">
+            <svg class="wave-chart-svg" id="wave-svg-1"></svg>
+        </div>
+        <div class="chart-area-2">
+            <svg class="wave-chart-svg" id="wave-svg-2"></svg>
+        </div>
+        <div class="chart-area-3">
+            <svg class="wave-chart-svg" id="wave-svg-3"></svg>
+        </div>
+    </div>
+
+    <script>
 
         // JSON data for wave heights
         const waveData = {
@@ -33,7 +65,7 @@
         // SVG chart dimensions
         // const svgWidth = 400;
         // const svgHeight = 200;
-        const svgWidth = 379;
+        // const svgWidth = 379;
         const svgHeight = 116;
 
         // Bar chart dimensions and styling
@@ -42,17 +74,23 @@
         const chartColor = "blue";
 
         days.forEach((dayData, index) => {
-            // Create an SVG element for each day
-            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            svg.setAttribute("width", svgWidth);
-            svg.setAttribute("height", svgHeight);
-            // document.body.appendChild(svg);
-            // Append the SVG element to the "chart-area" div
-            // const chartArea = document.querySelector('.chart-area');
+            // // Create an SVG element for each day
+            // const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            // svg.setAttribute("width", svgWidth);
+            // svg.setAttribute("height", svgHeight);
+            
+            // // Append the SVG element to the corresponding chart area div
+            // const chartArea = document.querySelector('.chart-area-' + (index + 1));
             // chartArea.appendChild(svg);
-            // Append the SVG element to the corresponding chart area div
-            const chartArea = document.querySelector('.chart-area-' + (index + 1));
-            chartArea.appendChild(svg);
+
+
+            /////
+            const svgId = "wave-svg-" + (index + 1);
+            const svg = document.getElementById(svgId);
+            // const svgWidth = contain.clientWidth/3;
+            const svgWidth = svg.clientWidth;
+            /////////
+
 
             const numBars = dayData.length;
             const barWidth = (svgWidth - (numBars - 1) * barSpacing - 20) / numBars; // Subtract 20 for spacing
@@ -79,5 +117,13 @@
         });
 
     </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

@@ -293,6 +293,7 @@
 /*** Wave Chart ***/
 .s-wavechart .tooltip-container {
     position: relative;
+    width: 100%;
 }
 
 .s-wavechart .tooltip-card {
@@ -331,12 +332,27 @@
     /* border-right: 1px solid rgba(0, 0, 0, 0.212); */
 }
 
+.s-wavechart .chart-container {
+    width: 100%;
+}
+
+.s-wavechart .chart-container .first-chart,
+.s-wavechart .chart-container .second-chart,
+.s-wavechart .chart-container .third-chart {
+    flex: 1; /* Each chart area takes up 1/3 of the container's width */
+}
+
 .s-wavechart .chart-container .chart-area {
     background: linear-gradient(to right, rgb(236, 239, 243) 0%, rgb(236, 239, 243) 27.6991%, rgba(236, 239, 243, 0.5) 27.6991%, rgba(236, 239, 243, 0.5) 29.4583%, white 29.4583%, white 75.7512%, rgba(236, 239, 243, 0.5) 75.7512%, rgba(236, 239, 243, 0.5) 77.5104%, rgb(236, 239, 243) 77.5104%, rgb(236, 239, 243) 100%);
     height: 126px;
-    /* width: 100%; */
+    width: 100%;
 
     border-right: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+.s-wavechart .chart-container .wave-chart-svg {
+    width: 100%; /* Make the SVG element fill the entire container */
+    height: 116px;
 }
 
 .s-wavechart .chart-container .each-bar {
@@ -410,6 +426,7 @@
 /*** Wind Chart ***/
 .s-windchart .tooltip-container {
     position: relative;
+    width: 100%;
 }
 
 .s-windchart .tooltip-card {
@@ -466,12 +483,27 @@
     transform: rotate(11deg);
 }
 
+.s-windchart .chart-container {
+    width: 100%;
+}
+
+.s-windchart .chart-container .first-chart,
+.s-windchart .chart-container .second-chart,
+.s-windchart .chart-container .third-chart {
+    flex: 1; /* Each chart area takes up 1/3 of the container's width */
+}
+
 .s-windchart .chart-container .chart-area {
     background: linear-gradient(to right, rgb(236, 239, 243) 0%, rgb(236, 239, 243) 27.6991%, rgba(236, 239, 243, 0.5) 27.6991%, rgba(236, 239, 243, 0.5) 29.4583%, white 29.4583%, white 75.7512%, rgba(236, 239, 243, 0.5) 75.7512%, rgba(236, 239, 243, 0.5) 77.5104%, rgb(236, 239, 243) 77.5104%, rgb(236, 239, 243) 100%);
     height: 126px;
-    /* width: 100%; */
+    width: 100%;
 
     border-right: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+.s-windchart .chart-container .wind-chart-svg {
+    width: 100%; /* Make the SVG element fill the entire container */
+    height: 70px;
 }
 
 .s-windchart .chart-container .each-bar {
@@ -481,8 +513,9 @@
 .s-windchart .chart-container .wind-info-container {
     /* display: flex;
     flex-direction: column; */
-    max-width: 373px;
-    width: auto;
+    /* max-width: 373px; */
+    width: 100%;
+    padding: 0 5px;
 }
 
 .s-windchart .chart-container .wind-info {
@@ -535,32 +568,37 @@
 
 
 
+
+
 /*** Tide Chart ***/
-.s-tidechart .chart-container .first-chart {
-    display: flex;
+.s-tidechart .chart-container {
+    /* display: flex; */
     width: 100%;
     position: relative;
 }
 
 .s-tidechart .chart-container .chart-area {
-    background: linear-gradient(to right, rgb(236, 239, 243) 0%, rgb(236, 239, 243) 27.6991%, rgba(236, 239, 243, 0.5) 27.6991%, rgba(236, 239, 243, 0.5) 29.4583%, white 29.4583%, white 75.7512%, rgba(236, 239, 243, 0.5) 75.7512%, rgba(236, 239, 243, 0.5) 77.5104%, rgb(236, 239, 243) 77.5104%, rgb(236, 239, 243) 100%);
+    /* background: linear-gradient(to right, rgb(236, 239, 243) 0%, rgb(236, 239, 243) 27.6991%, rgba(236, 239, 243, 0.5) 27.6991%, rgba(236, 239, 243, 0.5) 29.4583%, white 29.4583%, white 75.7512%, rgba(236, 239, 243, 0.5) 75.7512%, rgba(236, 239, 243, 0.5) 77.5104%, rgb(236, 239, 243) 77.5104%, rgb(236, 239, 243) 100%); */
     height: 126px;
-    /* width: 100%; */
+    width: 100%;
 
+    border-left: 1px solid rgba(0, 0, 0, 0.212);
     border-right: 1px solid rgba(0, 0, 0, 0.212);
 
-    position: absolute;
+    /* position: absolute;
     width: 33.33%;
-    z-index: -1;
+    z-index: -1; */
 }
 
-.s-tidechart .chart-container .each-bar {
-    fill: #b9d3df;
-}
-
-.s-tidechart .tidechart-container {
+.s-tidechart .chart-container .tide-chart-svg {
     width: 100%;
+    height: 116px;
+    /* Adjust the height as needed */
 }
+
+
+
+
 
 
 /*** Info Table ***/

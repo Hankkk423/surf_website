@@ -7,8 +7,8 @@
     <style>
         /* Add your CSS styles here */
         .tide-chart-svg {
-            width: 1200px;
-            height: 200px;
+            width: 900px;
+            height: 100px;
             /* Adjust the height as needed */
         }
     </style>
@@ -27,8 +27,8 @@
             "data": [
                 { "x": 0, "y": 200, "Date": "", "Time": "" },
                 { "x": 1, "y": 100, "Date": "", "Time": "" },
-                { "x": 54, "y": 68, "Date": "11/11", "Time": "05:19" },
-                { "x": 111, "y": 141, "Date": "11/11", "Time": "11:03" },
+                { "x": 54, "y": 68, "Date": "11/11", "Time": "05:19" }, //H: 100-32
+                { "x": 111, "y": 141, "Date": "11/11", "Time": "11:03" }, //L: 100-(-41)
                 { "x": 171, "y": 55, "Date": "11/11", "Time": "17:01" },
                 { "x": 237, "y": 168, "Date": "11/11", "Time": "23:40" },
                 { "x": 300, "y": 63, "Date": "11/12", "Time": "05:59" },
@@ -46,13 +46,17 @@
         // Set up the SVG container
         const svg = d3.select(".tide-chart-svg");
 
-        // Calculate scaling factor based on SVG width
+        // Calculate scaling factor based on SVG width and height
         const svgWidth = parseInt(svg.style("width"));
-        const scaleFactor = svgWidth / 720; // Assuming the original range is 0 to 720
+        const scaleFactorX = svgWidth / 720; // Assuming the original range is 0 to 720
+        const svgHeight = parseInt(svg.style("height"));
+        const scaleFactorY = svgHeight / 200; // Assuming the original range is 0 to 200
+        
 
         // Apply scaling to x-coordinates
         jsonData.data.forEach(d => {
-            d.x = d.x * scaleFactor;
+            d.x = d.x * scaleFactorX;
+            d.y = d.y * scaleFactorY;
         });
 
 
@@ -69,7 +73,7 @@
             .attr("d", line)
             .attr("fill", "rgba(185, 211, 223, 0.4)");
 
-        // Draw the path stroke="#171717" stroke-width="1.5px" fill="none"
+        // Draw the path (for "chart line") stroke="#171717" stroke-width="1.5px" fill="none"
         svg.append("path")
             .data([jsonData.data])
             .attr("d", line)
@@ -91,7 +95,7 @@
             .attr("x1", d => d.x)
             .attr("x2", d => d.x)
             .attr("y1", d => d.y) // Extracting y-coordinate from the curved line path
-            .attr("y2", 200) // Adjust the y2 value based on your chart height
+            .attr("y2", svgHeight) // Adjust the y2 value based on your chart height
             .attr("stroke", "#171717")
             .attr("stroke-width", "1.5px");
 
@@ -99,7 +103,7 @@
         // Add text labels with formatted DateTime
         verticalStrokes.append("text")
             .attr("x", d => d.x)
-            .attr("y", d => d.y - 30) // Adjust the y-coordinate for text positioning
+            .attr("y", d => d.y - 16) // Adjust the y-coordinate for text positioning
             .attr("text-anchor", "middle")
 
             // .text(d => d.Date)
@@ -126,11 +130,11 @@
         // Add text labels with formatted DateTime
         verticalStrokes.append("text")
             .attr("x", d => d.x)
-            .attr("y", d => d.y - 15) // Adjust the y-coordinate for text positioning
+            .attr("y", d => d.y - 6) // Adjust the y-coordinate for text positioning
             .attr("text-anchor", "middle")
 
             .text(d => {
-                const tideheight = (100 - d.y)/100;
+                const tideheight = ((100 - (d.y / scaleFactorY)) / 100).toFixed(2);  // "/scaleFactorY" bc it "*scaleFactorY" above to fit svg height
                 return `${tideheight} m`;
             })
 
