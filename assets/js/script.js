@@ -415,7 +415,7 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     // Sample JSON data (replace this with your actual JSON data)
-    const jsonData = {
+    const tideData = {
         "data": [
             { "x": 0, "y": 200, "Date": "", "Time": "" },
             { "x": 1, "y": 100, "Date": "", "Time": "" },
@@ -446,7 +446,8 @@ $(document).ready(function () {
 
 
     // Apply scaling to x-coordinates
-    jsonData.data.forEach(d => {
+    const tempData = JSON.parse(JSON.stringify(tideData));
+    tempData.data.forEach(d => {
         d.x = d.x * scaleFactorX;
         d.y = d.y * scaleFactorY;
     });
@@ -461,14 +462,16 @@ $(document).ready(function () {
 
     // Draw the path
     svg.append("path")
-        .data([jsonData.data])
+        .data([tempData.data])
         .attr("d", line)
+        .attr("class", "graph")
         .attr("fill", "rgba(185, 211, 223, 0.4)");
 
     // Draw the path (for "chart line") stroke="#171717" stroke-width="1.5px" fill="none"
     svg.append("path")
-        .data([jsonData.data])
+        .data([tempData.data])
         .attr("d", line)
+        .attr("class", "outline")
         .attr("stroke", "#171717")
         .attr("stroke-width", "1.5px")
         .attr("fill", "none");
@@ -476,8 +479,8 @@ $(document).ready(function () {
 
     // Draw vertical strokes for each point
     const verticalStrokes = svg.selectAll("g.vertical-stroke")
-        // .data(jsonData.data.filter(d => d.x !== 0 && d.x !== 1 && d.x !== 719 && d.x !== 720))
-        .data(jsonData.data.slice(2, -2)) // Exclude first two and last two elements
+        // .data(tempData.data.filter(d => d.x !== 0 && d.x !== 1 && d.x !== 719 && d.x !== 720))
+        .data(tempData.data.slice(2, -2)) // Exclude first two and last two elements
         .enter()
         .append("g")
         .attr("class", "vertical-stroke");
@@ -495,7 +498,7 @@ $(document).ready(function () {
     // Add text labels with formatted DateTime
     verticalStrokes.append("text")
         .attr("x", d => d.x)
-        .attr("y", d => d.y - 16) // Adjust the y-coordinate for text positioning
+        .attr("y", d => d.y - 17) // Adjust the y-coordinate for text positioning
         .attr("text-anchor", "middle")
 
         .text(d => {
@@ -509,10 +512,10 @@ $(document).ready(function () {
         .attr("font-weight", "700");
 
 
-    // Add text labels with formatted DateTime
+    // Add text labels with formatted TideHeight
     verticalStrokes.append("text")
         .attr("x", d => d.x)
-        .attr("y", d => d.y - 6) // Adjust the y-coordinate for text positioning
+        .attr("y", d => d.y - 8) // Adjust the y-coordinate for text positioning
         .attr("text-anchor", "middle")
 
         .text(d => {
@@ -525,21 +528,18 @@ $(document).ready(function () {
         .attr("font-weight", "700");
 
 
-
-
-    //////////TEMP//////////
     // Function to update tide chart on window resize
     function updateTideChart() {
         // Calculate scaling factor based on updated SVG width and height
         const tideSvg = d3.select(".s-tidechart .tide-chart-svg");
         const tideSvgWidth = parseInt(tideSvg.style("width"));
-        console.log("test11: ", tideSvgWidth);
         const scaleFactorX = tideSvgWidth / 720; // Assuming the original range is 0 to 720
         const tideSvgHeight = parseInt(tideSvg.style("height"));
         const scaleFactorY = tideSvgHeight / 200; // Assuming the original range is 0 to 200
 
         // Apply scaling to x-coordinates
-        jsonData.data.forEach(d => {
+        const tempData = JSON.parse(JSON.stringify(tideData));
+        tempData.data.forEach(d => {
             d.x = d.x * scaleFactorX;
             d.y = d.y * scaleFactorY;
         });
@@ -550,14 +550,19 @@ $(document).ready(function () {
             .y(d => d.y)
             .curve(d3.curveCardinal.tension(0.1)); // Adjust the tension parameter (0.7 is just an example)
 
-        // Update the path with new data
-        tideSvg.select(".tide-chart-path")
-            .data([jsonData.data])
+        // Update the "graph" path with new data
+        tideSvg.select(".tide-chart-svg .graph")
+            .data([tempData.data])
+            .attr("d", line);
+
+        // Update the "outline" path with new data
+        tideSvg.select(".tide-chart-svg .outline")
+            .data([tempData.data])
             .attr("d", line);
 
         // Update vertical strokes based on new data
         const verticalStrokes = tideSvg.selectAll("g.vertical-stroke")
-            .data(jsonData.data.slice(2, -2));
+            .data(tempData.data.slice(2, -2));
 
         verticalStrokes.select("line")
             .attr("x1", d => d.x)
@@ -566,15 +571,15 @@ $(document).ready(function () {
             .attr("y2", tideSvgHeight);
 
         // Update text labels with formatted DateTime
-        verticalStrokes.select("text:first-child")
+        verticalStrokes.select("text:nth-child(2)")
             .attr("x", d => d.x)
-            .attr("y", d => d.y - 16)
+            .attr("y", d => d.y - 17)
             .text(d => `${d.Date} ${d.Time}`);
 
         // Update text labels with tide height
         verticalStrokes.select("text:last-child")
             .attr("x", d => d.x)
-            .attr("y", d => d.y - 6)
+            .attr("y", d => d.y - 8)
             .text(d => {
                 const tideheight = ((100 - (d.y / scaleFactorY)) / 100).toFixed(2);
                 return `${tideheight} m`;
@@ -582,8 +587,6 @@ $(document).ready(function () {
     }
 
     // Event listener for window resize
-    // window.addEventListener("resize", updateTideChart);
-    //////////TEMP//////////
-
-
+    window.addEventListener("resize", updateTideChart);
+    
 });

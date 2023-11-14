@@ -359,6 +359,10 @@
     fill: #b9d3df;
 }
 
+.s-wavechart .chart-container .each-bar:hover {
+    fill: rgb(18, 28, 45);
+}
+
 .s-wavechart .chart-container .condition-colorbar {
     padding: 2px 3px 8px
 }
@@ -510,6 +514,10 @@
     fill: #b9d3df;
 }
 
+.s-windchart .chart-container .each-bar:hover {
+    fill: rgb(18, 28, 45);
+}
+
 .s-windchart .chart-container .wind-info-container {
     /* display: flex;
     flex-direction: column; */
@@ -579,7 +587,7 @@
 
 .s-tidechart .chart-container .chart-area {
     /* background: linear-gradient(to right, rgb(236, 239, 243) 0%, rgb(236, 239, 243) 27.6991%, rgba(236, 239, 243, 0.5) 27.6991%, rgba(236, 239, 243, 0.5) 29.4583%, white 29.4583%, white 75.7512%, rgba(236, 239, 243, 0.5) 75.7512%, rgba(236, 239, 243, 0.5) 77.5104%, rgb(236, 239, 243) 77.5104%, rgb(236, 239, 243) 100%); */
-    height: 126px;
+    height: 140px;
     width: 100%;
 
     border-left: 1px solid rgba(0, 0, 0, 0.212);
@@ -592,7 +600,7 @@
 
 .s-tidechart .chart-container .tide-chart-svg {
     width: 100%;
-    height: 116px;
+    height: 130px;
     /* Adjust the height as needed */
 }
 
