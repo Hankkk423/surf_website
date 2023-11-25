@@ -92,25 +92,9 @@ var handleTabBar = function () {
 
 // For Grid Box Card 1
 var handleGridCard_1 = function () {
-    // // Select the tooltip elements
-    // const $tooltipContainer = $('.s-wavechart .tooltip-container');
-    // const $tooltipCard = $('.s-wavechart .tooltip-card');
 
     // Sample data
     var waveData = Wave_Data;
-
-    // // Step 1: Parse timestamps in the JSON data
-    // const timestamps = waveData["ts"].map(timestamp => new Date(timestamp));
-
-    // // Step 2: Get the current local time
-    // const now = new Date();
-    // // Replace 'America/New_York' with your desired timezone
-    // const timeOptions = { timeZone: 'Asia/Taipei', hour12: false, hour: '2-digit', minute: '2-digit'};
-    // const timeString = now.toLocaleTimeString('en-US', timeOptions);
-    // console.log("timeString: ", timeString);
-
-    // // Step 3: Find the closest timestamp to the current time
-    // const closestTimestamp = timestamps.reduce((prev, curr) => Math.abs(curr - now) < Math.abs(prev - now) ? curr : prev);
 
     // Step 1: Parse timestamps in the JSON data with specific timezone
     const timezone = 'Asia/Taipei';
@@ -155,6 +139,57 @@ var handleGridCard_1 = function () {
     const currentText = $('.s-gridbox .card-1 .current-text');
     currentText.text("OK");
 
+}
+
+
+// For Grid Box Card 2
+var handleGridCard_2 = function () {
+
+    // Sample data
+    var windweatherData = Wind_Weather_Data;
+
+    // Step 1: Parse timestamps in the JSON data with specific timezone
+    const timezone = 'Asia/Taipei';
+    const timestamps = windweatherData["ts"].map(timestamp => new Date(timestamp + ' UTC').toLocaleString('en-US', { timeZone: timezone }));
+
+    // Step 2: Get the current local time in the desired timezone
+    const now = new Date().toLocaleString('en-US', { timeZone: timezone });
+    const currentTime = new Date(now);
+
+    // Replace 'America/New_York' with your desired timezone
+    const timeOptions = { hour12: false, hour: '2-digit', minute: '2-digit' };
+    const timeString = new Date(now).toLocaleTimeString('en-US', timeOptions);
+    console.log("timeString: ", timeString);
+
+    // Step 3: Find the closest timestamp to the current time
+    const closestTimestamp = timestamps.reduce((prev, curr) => Math.abs(new Date(curr) - new Date(now)) < Math.abs(new Date(prev) - new Date(now)) ? curr : prev);
+    const closestTime = new Date(closestTimestamp);
+
+    // Determine if current time is before or after the closest time
+    const isBeforeClosestTime = currentTime < closestTime;
+
+    if (isBeforeClosestTime) {
+        console.log("Current time is before the closest time.");
+        // You can perform actions or update HTML based on being before the closest time
+    } else {
+        console.log("Current time is after the closest time.");
+        // You can perform actions or update HTML based on being after the closest time
+    }
+
+
+    // Step 4: Get the corresponding index for the closest timestamp
+    const index = timestamps.indexOf(closestTimestamp);
+    console.log("index: ", index, closestTimestamp);
+
+    // Step 5: Get the wave data based on the index
+    const windspeedData = windweatherData["winds_speed"][index];
+    const windsdirectionData = windweatherData["winds_direction"][index];
+
+    const currentText = $('.s-gridbox .card-2 .current-text');
+    currentText.text("Onshore");
+
+    const windSpeed = $('.s-gridbox .card-2 .wind-speed');
+    windSpeed.text("33kts");
 
 }
 
@@ -591,6 +626,7 @@ $(document).ready(function () {
     handleTabBar();
 
     handleGridCard_1();
+    handleGridCard_2();
 
     handleLocalTime();
     handleWaveChartSvg();
