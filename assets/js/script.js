@@ -194,6 +194,93 @@ var handleGridCard_2 = function () {
 }
 
 
+// For Grid Box Card 3 (need to clean this part of code)
+var handleGridCard_3 = function () {
+
+    // Sample Data
+    var tideData = Tide_Data;
+
+
+    // Step 1: Parse timestamps in the JSON data with specific timezone
+    const timezone = 'Asia/Taipei';
+    const timestamps = tideData["ts"].map(timestamp => new Date(timestamp + ' UTC').toLocaleString('en-US', { timeZone: timezone }));
+
+    // Step 2: Get the current local time in the desired timezone
+    const now = new Date().toLocaleString('en-US', { timeZone: timezone });
+    const currentTime = new Date(now);
+
+    // Replace 'America/New_York' with your desired timezone
+    const timeOptions = { hour12: false, hour: '2-digit', minute: '2-digit' };
+    const timeString = new Date(now).toLocaleTimeString('en-US', timeOptions);
+    console.log("timeString: ", timeString);
+
+    // Step 3: Find the closest timestamp to the current time
+    const closestTimestamp = timestamps.reduce((prev, curr) => Math.abs(new Date(curr) - new Date(now)) < Math.abs(new Date(prev) - new Date(now)) ? curr : prev);
+    const closestTime = new Date(closestTimestamp);
+
+    // Determine if current time is before or after the closest time
+    const isBeforeClosestTime = currentTime < closestTime;
+
+    // Step 4: Get the corresponding index for the closest timestamp
+    const index = timestamps.indexOf(closestTimestamp);
+    console.log("index: ", index, closestTimestamp);
+
+    if (isBeforeClosestTime) {
+        console.log("Current time is before the closest time.");
+        // You can perform actions or update HTML based on being before the closest time
+    } else {
+        console.log("Current time is after the closest time.");
+        index+=1;
+        // You can perform actions or update HTML based on being after the closest time
+    }
+
+
+    // // Step 4: Get the corresponding index for the closest timestamp
+    // const index = timestamps.indexOf(closestTimestamp);
+    // console.log("index: ", index, closestTimestamp);
+
+    // Step 5: Get the tide data based on the index
+    const tideheightData = tideData["tide_height"][index+2]["y"];
+    const tideconditionData = tideData["tide_height"][index+2]["Condition"];
+    const tidetimeData = tideData["tide_height"][index+2]["Time"];
+
+    const currentText = $('.s-girdbox .card-3 .current-text');
+    const nextTideHeight = $('.s-gridbox .card-3 .next-tide-height');
+    const nextTideDescription = $('.s-gridbox .card-3 .next-tide-description');
+    const nextTideTime = $('.s-gridbox .card-3 .next-time-time');
+
+    if (isBeforeClosestTime) {
+        if (tideconditionData == "H") {
+            currentText.text("Raising Tide");
+            nextTideHeight.text(tideheightData);
+            nextTideDescription.text("high");
+            nextTideTime.text(tidetimeData);
+        } else {
+            currentText.text("Dropping Tide");
+            nextTideHeight.text(tideheightData);
+            nextTideDescription.text("low");
+            nextTideTime.text(tidetimeData);
+        }
+    } else {
+        if (tideconditionData == "H") {
+            currentText.text("Raising Tide");
+            nextTideHeight.text(tideheightData);
+            nextTideDescription.text("high");
+            nextTideTime.text(tidetimeData);
+        } else {
+            currentText.text("Dropping Tide");
+            nextTideHeight.text(tideheightData);
+            nextTideDescription.text("low");
+            nextTideTime.text(tidetimeData);
+        }
+
+    }
+
+}
+
+
+
+
 // For Local Time
 var handleLocalTime = function () {
     function updateClock() {
